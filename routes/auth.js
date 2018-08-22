@@ -27,7 +27,7 @@ router.get('/code', async (req, res) => {
     token = JSON.parse(token);
     config.token = token;
 
-    res.redirect(' https://vast-springs-36717.herokuapp.com//hello');
+    res.redirect(' https://vast-springs-36717.herokuapp.com/hello');
 
 });
 
