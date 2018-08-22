@@ -1,5 +1,5 @@
 {
-  "redirectUri": "http://vast-springs-36717.herokuapp.com/auth/code",
+  "redirectUri": "http://vast-springs-36717.herokuapp.com/code",
   "appId": "6668814",
   "appProtectedKey": "9TB2bZM1mlVMdr5Y12VO",
   "appServiceKey": "0f17093b0f17093b0f17093bb00f72cb3500f170f17093b546b654088d0c9704dcead7c",
