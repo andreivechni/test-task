@@ -7,13 +7,11 @@ const app = express();
 const auth = require('./routes/auth');
 const hello = require('./routes/hello');
 const check = require('./middleware/tokenCheck');
-const test = require('./routes/test');
 
 
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.use('/', test);
 app.use('/auth', auth);
 app.use(check);
 app.use('/hello', hello);
