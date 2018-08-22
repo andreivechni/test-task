@@ -8,7 +8,7 @@ const defaultOauthUrl = `https://oauth.vk.com`;
 const oAuthUrl = `${defaultOauthUrl}/authorize?client_id=${config.appId}&display=page&redirect_uri=${config.redirectUri}&scope=friends&response_type=code&v=5.80`;
 const getTokenUrl = `${defaultOauthUrl}/access_token?client_id=${config.appId}&client_secret=${config.appProtectedKey}&redirect_uri=${config.redirectUri}&code=`;
 
-router.get('/auth', async (req, res) => {
+router.get('/', async (req, res) => {
 
     res.redirect(oAuthUrl);
 
