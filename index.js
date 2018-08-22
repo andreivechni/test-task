@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const HOST = 'vast-springs-36717.herokuapp.com';
 
 const express = require('express');
@@ -8,7 +8,6 @@ const auth = require('./routes/auth');
 const hello = require('./routes/hello');
 const check = require('./middleware/tokenCheck');
 
-console.log('vast-springs-36717.herokuapp.com');
 
 app.set('views', './views');
 app.set('view engine', 'pug');
