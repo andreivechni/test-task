@@ -12,6 +12,8 @@ const check = require('./middleware/tokenCheck');
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+app.use(express.static('public'));
+
 app.use('/', auth);
 app.use(check);
 app.use('/hello', hello);
