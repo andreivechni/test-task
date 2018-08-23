@@ -1,5 +1,5 @@
-const PORT = process.env.PORT;
-const HOST = 'vast-springs-36717.herokuapp.com';
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.dev ? 'localhost' : 'vast-springs-36717.herokuapp.com';
 
 const express = require('express');
 const app = express();

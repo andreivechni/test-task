@@ -4,14 +4,14 @@ const router = require('express').Router();
 
 const config = require('../config/config');
 
+const redirect_uri = process.env.dev ? `${config.dev.redirectUri}:3000` : `${config.production.redirectUri}`;
+
 const defaultOauthUrl = `https://oauth.vk.com`;
-const oAuthUrl = `${defaultOauthUrl}/authorize?client_id=${config.appId}&display=page&redirect_uri=${config.redirectUri}&scope=friends&response_type=code&v=5.80`;
-const getTokenUrl = `${defaultOauthUrl}/access_token?client_id=${config.appId}&client_secret=${config.appProtectedKey}&redirect_uri=${config.redirectUri}&code=`;
+const oAuthUrl = `${defaultOauthUrl}/authorize?client_id=${config.appId}&display=page&redirect_uri=${redirect_uri}/code&scope=friends&response_type=code&v=5.80`;
+const getTokenUrl = `${defaultOauthUrl}/access_token?client_id=${config.appId}&client_secret=${config.appProtectedKey}&redirect_uri=${redirect_uri}/code&code=`;
 
 router.get('/', async (req, res) => {
-
     res.redirect(oAuthUrl);
-
 });
 
 router.get('/code', async (req, res) => {
@@ -27,7 +27,7 @@ router.get('/code', async (req, res) => {
     token = JSON.parse(token);
     config.token = token;
 
-    res.redirect('http://vast-springs-36717.herokuapp.com/hello');
+    res.redirect(`${redirect_uri}/hello`);
 
 });
 
