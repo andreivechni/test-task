@@ -12,22 +12,23 @@ html
         header(class="header" id="header")
             div(class="main-header")
                 div(class="container")
-                    div(class="row")
+                    div(class="row header-content")
                         div(class="col-lg-4")
                             img(src=userPic class="user-pic")
-                        div(class="col-lg-8")
-                            h1= 'Greetings, ' + user
-
-        section(id="friends" class="friends")
-            div(class="container")
-                div(class="row")
-                    div(class="col-lg-12")
-                        h2= 'List of random friends, as requested:'
+                        div(class="col-lg-8 d-flex justify-content-center")
+                            h1(class="greetings")= 'Greetings, ' + user
+        article(id="friends" class="friends")
                 div(class="container")
+                    div(class="row")
+                        div(class="col-lg-12")
+                            h2(class="friends-header")= 'List of random friends, as requested:'
+                div(class="container friends-gallery")
                     div(class="row")
                         div(class="col-lg-12")
                             ul(class="friends-pics d-flex justify-content-between")
                                 each friend in friends
                                     li(class="friends-pics_pic")
-                                        a(href=`https://vk.com/id${friend.id}`): img(src=friend.photo_200_orig)
-                                        a(href=`https://vk.com/id${friend.id}`): p(class="d-flex justify-content-center")= `${friend.first_name} ${friend.last_name}`
+                                        a(href=`https://vk.com/id${friend.id}`)
+                                            img(src=friend.photo_200_orig class="friends-pics")
+                                            br
+                                        a(class="d-flex justify-content-center friends-pics-signs" href=`https://vk.com/id${friend.id}`)= `${friend.first_name} ${friend.last_name}`

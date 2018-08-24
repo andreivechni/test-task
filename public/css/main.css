@@ -5,17 +5,53 @@ ul, li {
 }
 
 body {
+    background: #edeef0;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.friends {
+
+
+.main-header {
+    margin-top: 10px;
+}
+
+.header-content {
+    background: #FEFEFE;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.user-pic {
+    height: 300px;
+}
+
+.greetings {
+    margin-top: 100px;
+}
+
+.friends-header {
+    font-size: 50px;
+    padding: 50px 0;
+}
+
+.friends-pics {
+    height: 200px;
+}
+
+.friends-pics-signs {
     font-size: 25px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px white;
 }
 
 img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.user-pic {
-    margin: 10px;
 }
